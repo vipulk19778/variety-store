@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 10px;
+}
+.App {
+  text-align: center;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
