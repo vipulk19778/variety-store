@@ -60,11 +60,19 @@ export const ProductContainer = () => {
 
   const filterByCategory = (e) => {
     const value = e.target.value;
+
     if (value !== "all") {
-      const temp = copyListItem.filter((obj) => {
-        return obj.category.includes(value.toLowerCase());
-      });
-      setListItem(temp);
+      if (value === "men's clothing") {
+        const temp = copyListItem.filter((obj) => {
+          return obj.category === value;
+        });
+        setListItem(temp);
+      } else {
+        const temp = copyListItem.filter((obj) => {
+          return obj.category.includes(value.toLowerCase());
+        });
+        setListItem(temp);
+      }
     } else setListItem(copyListItem);
   };
 
