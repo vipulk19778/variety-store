@@ -80,7 +80,7 @@ export const ProductRenderer = ({ store }) => {
               Filter By Category
             </option>
             <option value="all">All</option>
-            <option value="men's">Mens</option>
+            <option value="men's clothing">Mens</option>
             <option value="women's">Womens</option>
             <option value="jewelery">Jewelery</option>
             <option value="electronics">Electronics</option>
