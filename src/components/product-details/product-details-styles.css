@@ -1,9 +1,4 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Jost", sans-serif;
-}
+/* Main Page */
 
 .productContainer {
   background: #eee;
@@ -16,6 +11,8 @@
 .productContainer::-webkit-scrollbar {
   width: 0px;
 }
+
+/* Page header */
 
 .product-header {
   width: 100%;
@@ -83,9 +80,13 @@
   right: 2%;
 }
 
+/* Loader */
+
 .spinner-border {
   margin-top: 200px;
 }
+
+/* Card Items */
 
 .product-list {
   display: flex;
@@ -95,22 +96,27 @@
   margin-top: 9rem;
 }
 
-.product-card {
+.product-card-main {
   width: 20%;
   height: 50vh;
   margin: 1rem;
   position: relative;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
   background-color: white;
   border-radius: 12px;
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
   color: rgb(87, 82, 82);
   display: flex;
+  transform-style: preserve-3d;
+  transition: all 0.7s ease;
 }
 
-.product-card:hover {
+.product-card-main:hover {
+  transform: rotateY(180deg);
   box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.3);
-  transform: scale(1.05, 1.05);
+}
+
+.product-card {
+  backface-visibility: hidden;
 }
 
 .product-img {
@@ -152,10 +158,26 @@
   padding: 10px 23px 10px 8px;
 }
 
+.product-card-description-container {
+  width: 100%;
+  height: 50vh;
+  border-radius: 12px;
+  position: absolute;
+  backface-visibility: hidden;
+  padding: 10px 20px;
+  transform: rotateY(180deg);
+  text-align: justify;
+  overflow: scroll;
+}
+
+.product-card-description-container::-webkit-scrollbar {
+  width: 0;
+}
+
 /* Media Query */
 
 @media screen and (max-width: 500px) {
-  .product-card {
+  .product-card-main {
     width: 70vw;
     margin: 0.2rem;
     height: 60vh;
@@ -197,7 +219,7 @@
 }
 
 @media screen and (min-width: 500px) and (max-width: 850px) {
-  .product-card {
+  .product-card-main {
     width: 40vw;
     margin: 0.5rem;
     height: 52vh;
@@ -234,7 +256,7 @@
   }
 }
 @media screen and (min-width: 850px) and (max-width: 1200px) {
-  .product-card {
+  .product-card-main {
     width: 30vw;
     margin: 0.5rem;
   }

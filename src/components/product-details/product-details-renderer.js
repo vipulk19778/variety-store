@@ -1,7 +1,5 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
-// import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
-// import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import StarIcon from "@mui/icons-material/Star";
 
 export const ProductRenderer = ({ store }) => {
@@ -14,6 +12,7 @@ export const ProductRenderer = ({ store }) => {
     filterByRating,
     filterByCategory,
   } = store;
+
   return (
     <div className="productContainer">
       <div className="product-header">
@@ -94,25 +93,31 @@ export const ProductRenderer = ({ store }) => {
         <>
           <div className="product-list">
             {filterArr.map((data) => (
-              <div className="card product-card" key={data.id}>
-                <div>
-                  <img
-                    src={data.image}
-                    alt={data.title}
-                    className="product-img"
-                  />
-                </div>
-
-                <div className="product-details">
+              <div className="card product-card-main" key={data.id}>
+                <div className="product-card">
                   <div>
-                    <h5 className="product-title">{data.title}</h5>
+                    <img
+                      src={data.image}
+                      alt={data.title}
+                      className="product-img"
+                    />
                   </div>
-                  <div className="product-rating">
-                    {data.rating.rate}
-                    <StarIcon className="star-icon" />
+
+                  <div className="product-details">
+                    <div>
+                      <h5 className="product-title">{data.title}</h5>
+                    </div>
+                    <div className="product-rating">
+                      {data.rating.rate}
+                      <StarIcon className="star-icon" />
+                    </div>
+                    <div className="product-price">₹{data.price}</div>
                   </div>
-                  <div className="product-price">₹{data.price}</div>
-                  {/* <div>{data.description}</div> */}
+                </div>
+                <div className="product-card-description-container">
+                  <span className="product-card-description">
+                    {data.description}
+                  </span>
                 </div>
               </div>
             ))}
