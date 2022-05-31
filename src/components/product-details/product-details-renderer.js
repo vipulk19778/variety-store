@@ -32,7 +32,7 @@ export const ProductRenderer = ({ store }) => {
         </div>
 
         <div className="sortingContainer">
-          Sort By:
+          <span style={{ fontSize: "0.9em" }}>Sort By:</span>
           <select
             className="form-select"
             aria-label="Default select example"
@@ -51,7 +51,7 @@ export const ProductRenderer = ({ store }) => {
         </div>
 
         <div className="filterRatingContainer">
-          Filter By Rating:
+          <span style={{ fontSize: "0.9em" }}>Filter By Rating:</span>
           <select
             className="form-select"
             aria-label="Default select example"
@@ -70,7 +70,7 @@ export const ProductRenderer = ({ store }) => {
         </div>
 
         <div className="filterCategoryContainer">
-          Filter By Category:
+          <span style={{ fontSize: "0.9em" }}>Filter By Category:</span>
           <select
             className="form-select"
             aria-label="Default select example"
